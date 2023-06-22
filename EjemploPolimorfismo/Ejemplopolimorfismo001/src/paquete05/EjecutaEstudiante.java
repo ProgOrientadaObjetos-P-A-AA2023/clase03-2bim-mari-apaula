@@ -12,7 +12,7 @@ public class EjecutaEstudiante {
 
         /*
         Generar un proceso que permita ingresar n número 
-        de docentes. 
+        de estudientes. 
         El usuario decide de manera prevía cuantos objetos
         de tipo EstudiantePresencial y EstudianteDistancia
         quiere ingresar.
@@ -28,9 +28,11 @@ public class EjecutaEstudiante {
         double costoAsig;
         int numeroAsigs;
         int tipoEstudiante;
-        String continuar;
-        ArrayList<Estudiante> estudiantes = new ArrayList<>();
-
+        int contador=0, num;      
+        
+        System.out.println("Ingrese cuantos estudiantes desea ingresar");
+        num = entrada.nextInt();
+        Estudiante [] estudiantes = new Estudiante [num];
         // inicio de solución
         do {
             System.out.println("Tipo de Estudiante a ingresar\n"
@@ -61,8 +63,8 @@ public class EjecutaEstudiante {
                 edadEst,
                 numeroCreds, 
                 costoCred);
-                    estPresencial.calcularMatricula();
-                    estudiantes.add(estPresencial);
+                    estudiantes [contador] = estPresencial;
+                    contador++;
                 }
                 case 2 -> {
                     System.out.println("Ingrese los nombres del estudiante");
@@ -85,29 +87,25 @@ public class EjecutaEstudiante {
                             edadEst,
                             numeroAsigs, 
                             costoAsig);
-                    estudianteD.calcularMatricula();
                     
-                    estudiantes.add(estudianteD);
+                    estudiantes [contador] = estudianteD;
+                    contador++;
                 }
                 default -> {
                     System.out.println("XD");
                 }
             }
-            entrada.nextLine();
-            System.out.println("Desea ingresar más estudiante. Digite la "
-                    + "letra S para continuar");
-            continuar = entrada.nextLine();
-        } while (continuar.equals("S"));
+        } while (contador < estudiantes.length);
 
         // ciclo que permite comprobar el polimorfismo
         // este código no debe ser modificado.
-        for (int i = 0; i < estudiantes.size(); i++) {
+        for (int i = 0; i < contador; i++) {
             // 1.  
-            estudiantes.get(i).calcularMatricula();
+            estudiantes[i].calcularMatricula();
 
             System.out.printf("\n\tDatos Estudiante\n"
                     + "%s\n",
-                    estudiantes.get(i));
+                    estudiantes[i]);
 
         }
     }
