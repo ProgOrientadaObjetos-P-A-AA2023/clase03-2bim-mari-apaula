@@ -23,9 +23,11 @@ public abstract class Estudiante {
     protected int edadEstudiante;
     protected double matricula;
     
-    public Estudiante(String nombre, String apellido){
+    public Estudiante(String nombre, String apellido, String id, int edad){
         nombresEstudiante = nombre;
         apellidosEstudiante = apellido;
+        identificacionEstudiante = id; 
+        edadEstudiante = edad;
     }
     // Método establecerNombresEstudiante(nom: Cadena)
     public void establecerNombresEstudiante(String nom){
@@ -82,5 +84,20 @@ public abstract class Estudiante {
     */
     public double obtenerMatricula(){
         return matricula;
+    }
+    
+    @Override
+    public String toString() {
+        String cadena = String.format("Nombre: %s\n"
+                + "Apellido: %s\n"
+                + "identificación: %s\n"
+                + "Edad: %d\n", 
+                nombresEstudiante,
+                apellidosEstudiante, 
+                identificacionEstudiante,
+                edadEstudiante);
+        
+        
+        return cadena;
     }
 }

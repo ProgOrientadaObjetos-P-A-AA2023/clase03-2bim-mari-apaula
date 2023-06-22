@@ -18,6 +18,16 @@ public abstract class Estudiante {
     protected String identificacionEstudiante;
     protected int edadEstudiante;
     protected double matricula;
+
+    public Estudiante(String nombresEstudiante, String apellidosEstudiante, String identificacionEstudiante, int edadEstudiante, double matricula) {
+        this.nombresEstudiante = nombresEstudiante;
+        this.apellidosEstudiante = apellidosEstudiante;
+        this.identificacionEstudiante = identificacionEstudiante;
+        this.edadEstudiante = edadEstudiante;
+        this.matricula = matricula;
+    }
+    
+    
     
     // Método establecerNombresEstudiante(nom: Cadena)
     public void establecerNombresEstudiante(String nom){
@@ -70,4 +80,25 @@ public abstract class Estudiante {
     public double obtenerMatricula(){
         return matricula;
     }
+    
+    public String toString(String[] args) {
+        String cadena = String.format("Nombre: %s\n"
+                + "Apellido: %s\n"
+                + "identificación: %s\n"
+                + "Edad: %d\n", 
+                nombresEstudiante,
+                apellidosEstudiante, 
+                identificacionEstudiante,
+                edadEstudiante);
+        
+        
+        return cadena;
+    }
 }
+
+
+/*protected String nombresEstudiante;
+    protected String apellidosEstudiante;
+    protected String identificacionEstudiante;
+    protected int edadEstudiante;
+    protected double matricula;*/

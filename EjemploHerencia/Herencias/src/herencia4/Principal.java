@@ -28,23 +28,23 @@ public class Principal {
         listaDocentes.add(doc1);
         listaDocentes.add(doc2);
         
-        ArrayList<Estudiante> listaEstudiantes = new ArrayList<>();
+        //ArrayList<Estudiante> listaEstudiantes = new ArrayList<>();
+        // agregar elementos
+        
+        //ArrayList<Policia> listaPolicias = new ArrayList<>();
         // agregar elementos
         
         
-        ArrayList<Policia> listaPolicias = new ArrayList<>();
-        // agregar elementos
         
+        ReporteDocente rd = new ReporteDocente("0001Doc", listaDocentes);
         
-        ReporteDocente rd = new ReporteDocente("0001Doc");
+        //ReporteEstudiante re = new ReporteEstudiante("0001Est");
         
-        ReporteEstudiante re = new ReporteEstudiante("0001Est");
-        
-        ReportePolicia rp = new ReportePolicia("0001Pol");
+        //ReportePolicia rp = new ReportePolicia("0001Pol");
         
         System.out.println(rd);
-        System.out.println(re);
-        System.out.println(rp);
+        //System.out.println(re);
+        //System.out.println(rp);
         
     }
 }

@@ -22,6 +22,13 @@ public abstract class Estudiante {
     protected String identificacionEstudiante;
     protected int edadEstudiante;
     protected double matricula;
+
+    public Estudiante(String nombresEstudiante, String apellidosEstudiante, String identificacionEstudiante, int edadEstudiante) {
+        this.nombresEstudiante = nombresEstudiante;
+        this.apellidosEstudiante = apellidosEstudiante;
+        this.identificacionEstudiante = identificacionEstudiante;
+        this.edadEstudiante = edadEstudiante;
+    }  
     
     // Método establecerNombresEstudiante(nom: Cadena)
     public void establecerNombresEstudiante(String nom){
@@ -71,12 +78,22 @@ public abstract class Estudiante {
         return edadEstudiante;
     }
     
-    /*
-    Método obtenerMatricula() : Real
-        a.  return matricula
-        b.  Fin Método obtenerMatricula
-    */
     public double obtenerMatricula(){
         return matricula;
+    }
+    
+    @Override
+    public String toString() {
+        String cadena = String.format("Nombre: %s\n"
+                + "Apellido: %s\n"
+                + "identificación: %s\n"
+                + "Edad: %d\n", 
+                nombresEstudiante,
+                apellidosEstudiante, 
+                identificacionEstudiante,
+                edadEstudiante);
+        
+        
+        return cadena;
     }
 }

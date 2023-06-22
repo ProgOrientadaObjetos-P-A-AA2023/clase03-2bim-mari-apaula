@@ -18,6 +18,11 @@ public class Estudiante extends Persona{
         setMatricula(mat);
     }
     
+    public Estudiante( double mat){
+        ;
+        setMatricula(mat);
+    }
+    
     @Override
     public void setNombre(String n){
         nombre = n.toUpperCase();    
